@@ -12,7 +12,7 @@ steps:
   name: 'gcr.io/cloud-builders/docker'
   args: ['ps']
 
-- id: "Rodando Composer"
+- id: "Rodando composer"
   name: 'gcr.io/cloud-builders/docker'
   args: ['exec','-t','app','composer','install']
 
@@ -24,10 +24,10 @@ steps:
   name: 'gcr.io/cloud-builders/docker'
   args: ['exec','-t','app','php','/var/www/artisan','key:generate']
 
-- id: "Rodando Migrations"
+- id: "Rodando migrations"
   name: 'gcr.io/cloud-builders/docker'
   args: ['exec','-t','app','php','/var/www/artisan','migrate']
 
-- id: "Rodando Phpunit"
+- id: "Rodando phpunit"
   name: 'gcr.io/cloud-builders/docker'
   args: ['exec','-t','app','php','/var/www/vendor/bin/phpunit','-c','/var/www/phpunit.xml']

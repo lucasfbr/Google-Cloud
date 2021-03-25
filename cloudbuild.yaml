@@ -8,10 +8,6 @@ steps:
   name: 'gcr.io/cloud-builders/docker'
   args: ['exec','-u','root','-t','app','chown','-R','www-data:www-data','/var/www']
 
-- id: "Criando database laravel"
-  name: 'gcr.io/cloud-builders/docker'
-  args: ['exec','-u','root','-t','db','mysql','-u','root','-p','root','create database laravel']
-
 - id: "Rodando docker ps "
   name: 'gcr.io/cloud-builders/docker'
   args: ['ps']
